@@ -1,6 +1,6 @@
  import mongoose from "mongoose";
  const Db = async() => {
-const MONGODB=process.env.VITE_MONGODB
+const MONGODB=process.env.MONGODB
   try {
     const con=await mongoose.connect(MONGODB)
     console.log('connected to db')
