@@ -1,6 +1,7 @@
 import express from 'express'
 import { requireSignIn,isAdmin } from '../middleware/authMiddleware.js';
 import { registerController, loginController } from '../controller/authController.js';
+ 
  import { ForgotPassword } from '../controller/authController.js';
 const router=express.Router();
 

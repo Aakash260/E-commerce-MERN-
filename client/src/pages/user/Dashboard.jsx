@@ -1,9 +1,13 @@
 import React from 'react'
-
-const Dashboard = () => {
+import UserMenu from './UserMenu'
+import { Outlet } from 'react-router-dom'
+const  Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div className='flex h-[85vh]'>
+        <div className='border border-b-2 w-[20vw]'><UserMenu/></div>
+        <div className='border border-b-2 w-full'><Outlet/></div>
+    </div>
   )
 }
 
-export default Dashboard
+export default  Dashboard
