@@ -65,7 +65,7 @@ const [categoryId, setCategoryId] = useState("")
       <div className="text-center p-4 font-extrabold">Manage Categories</div>
       <CategoryForm getCategory={getCategory} />
       <ToastContainer />
-      <div className="container mx-auto">
+      <div className="container mx-auto h-[25vw] overflow-y-scroll">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
             <tr>

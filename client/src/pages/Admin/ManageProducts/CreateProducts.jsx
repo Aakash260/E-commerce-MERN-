@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const CreateProducts = () => {
 
  return <div>
-      <div className="text-center p-4 font-extrabold">Manage Products</div>
+      <div className="text-center p-4 font-extrabold ">Manage Products</div>
       <ProductForm/>
   </div>
 

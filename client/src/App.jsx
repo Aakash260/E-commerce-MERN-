@@ -23,14 +23,16 @@ import 'react-toastify/dist/ReactToastify.min.css';
  import Profile from './pages/user/Profile.jsx'
  import Order from './pages/user/Order.jsx'
  import UserScreen from './pages/user/UserScreen.jsx'
+ import ShowAdminAllProducts from '../src/pages/Admin/ShowAdminAllProducts.jsx'
+ import SingleProduct from './pages/Admin/ManageProducts/SingleProduct.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 const App = () => {
   return (
     <>
     <BrowserRouter>
-      <Header/>
        
-      <div className='min-h-[79vh]'>
+      <Header/>
+      <div className='min-h-[79vh] grid'>
         <Routes>
             <Route path='/' index element={<Homepage/>}/>
             <Route path='/about'  element={<About/>}/>
@@ -46,6 +48,8 @@ const App = () => {
             <Route path=''  element={<AdminScreen/>}/>
             <Route path='create-category'  element={<CreateCategory/>}/>
             <Route path='create-product'  element={<CreateProducts/>}/>
+            <Route path='viewAll-product'  element={<ShowAdminAllProducts/>}/>
+            <Route path='viewAll-product/:slug'  element={<SingleProduct/>}/>
             <Route path='users'  element={<Users/>}/>
             </Route>
             </Route>

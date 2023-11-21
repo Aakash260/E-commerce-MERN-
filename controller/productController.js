@@ -133,7 +133,7 @@ export const updateProductController = async(req,res) => {
             case !quantity:
                 return res.status(400).send({error:'Quantity is Required'})
              
-            case photo && photo.size>1000000:
+            case  photo && photo.size>1000000:
                 return res.status(400).send({error:'Photo is required size less 1mb'})
         
         }
@@ -151,7 +151,7 @@ export const updateProductController = async(req,res) => {
     } catch (error) {
         res.status(500).send({
             success:false,
-            message:'Error in creating Product',
+            message:'Error in updating Product',
            error
         })
     }

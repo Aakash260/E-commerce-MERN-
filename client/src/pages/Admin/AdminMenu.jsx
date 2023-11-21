@@ -18,6 +18,11 @@ const AdminMenu = () => {
        Create Product
       </div>
   </Link>
+  <Link to='/dashboard/admin/viewAll-product'>
+      <div className="flex-1 bg-pink-500 p-4">
+       View All Product
+      </div>
+  </Link>
  
   <Link to='/dashboard/admin/users'>
       <div className="flex-1 bg-yellow-500 p-4">
