@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
+
 function RegistrationForm() {
   const navigate=useNavigate();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,7 +30,7 @@ function RegistrationForm() {
       const res=await axios.post(`${import.meta.env.VITE_API}/api/v1/auth/register`,
       {name,email,password,phone,address,answer})
       if(res.data.success){
- toast.success('User Registered Successfully!', {
+    toast.success('User Registered Successfully!', {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -38,9 +40,9 @@ function RegistrationForm() {
       progress: undefined,
       theme: "colored",
       });
-      // setTimeout(() => {
-      //   navigate('/login')
-      // }, 3000);
+      setTimeout(() => {
+        navigate('/login')
+      }, 3000);
       }
     } catch (error) {
       console.log(error)

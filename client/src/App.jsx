@@ -22,10 +22,13 @@ import 'react-toastify/dist/ReactToastify.min.css';
  import Users from './pages/Admin/users.jsx'
  import Profile from './pages/user/Profile.jsx'
  import Order from './pages/user/Order.jsx'
+ import ProductDetails from './pages/ProductDetails.jsx'
  import UserScreen from './pages/user/UserScreen.jsx'
  import ShowAdminAllProducts from '../src/pages/Admin/ShowAdminAllProducts.jsx'
  import SingleProduct from './pages/Admin/ManageProducts/SingleProduct.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Search from './pages/Search.jsx'
+ 
 const App = () => {
   return (
     <>
@@ -36,6 +39,8 @@ const App = () => {
         <Routes>
             <Route path='/' index element={<Homepage/>}/>
             <Route path='/about'  element={<About/>}/>
+            <Route path='/productDetails/:slug'  element={<ProductDetails/>}/>
+            <Route path='/search'  element={<Search/>}/>
             <Route path='/dashboard'  element={<Private/>}>
             <Route path='user'  element={<Dashboard/>}>
             <Route path=''  element={<UserScreen/>}/>
