@@ -160,7 +160,16 @@ useEffect(() => {
                 </div>
                 <div className='flex justify-around'>
                   <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>navigate(`/productDetails/${e.slug}`)}>Details</button>
-                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>{setCart([...cart,e]); localStorage.setItem('cart',JSON.stringify([...cart,e]))}}>Cart</button>
+                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>{setCart([...cart,e]); localStorage.setItem('cart',JSON.stringify([...cart,e]));  toast.success('Added to Cart!', {
+             position: "top-right",
+             autoClose: 3000,
+             hideProgressBar: false,
+             closeOnClick: true,
+             pauseOnHover: true,
+             draggable: true,
+             progress: undefined,
+             theme: "colored",
+             });}}>Cart</button>
                 </div>
               </div>
              

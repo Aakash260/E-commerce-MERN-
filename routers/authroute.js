@@ -1,8 +1,7 @@
 import express from 'express'
 import { requireSignIn,isAdmin } from '../middleware/authMiddleware.js';
-import { registerController, loginController } from '../controller/authController.js';
- 
- import { ForgotPassword } from '../controller/authController.js';
+import { registerController,loginController,getOrderController } from '../controller/authController.js'; 
+import { ForgotPassword } from '../controller/authController.js';
 const router=express.Router();
 
 router.post('/register',registerController)
@@ -22,5 +21,6 @@ router.get('/admin-auth',requireSignIn,isAdmin,(req,res)=>{
 
 router.post('/forgot-password',ForgotPassword)
 
+ router.get('/order',requireSignIn,getOrderController)
  
 export default router;
