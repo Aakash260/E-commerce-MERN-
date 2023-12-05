@@ -113,10 +113,9 @@ export const ForgotPassword = async (req, res) => {
 
 
 export const getOrderController = async (req, res) => {
- 
     try {
-        const orders = await orderModel.find({ buyer: req.user._id }).populate("products","-photo").populate("buyer","name");
-        res.json(orders);
+        const orders = await orderModel.find({ buyer: req.user._id }).populate("products", "-photo").populate("buyer", "name");
+        res.json(orders)
     }
     catch (error) {
         res.status(500).send({
@@ -127,3 +126,34 @@ export const getOrderController = async (req, res) => {
     }
 }
 
+export const getAllOrderController = async (req, res) => {
+    try {
+        const orders = await orderModel.find({}).populate("products", "-photo").populate("buyer", "name");
+        res.json(orders)
+    }
+    catch (error) {
+        console.log(error)
+        res.status(500).send({
+            error,
+            success: false,
+            message: `Error in Fetching User Orders`
+        })
+    }
+}
+
+export const OrderUpdateController = async (req, res) => {
+    try {
+        const { orderId } = req.params
+        const { status } = req.body
+        const orders = await orderModel.findByIdAndUpdate(orderId, { status }, { new: true })
+        res.json(orders)
+    }
+    catch (error) {
+        console.log(error)
+        res.status(500).send({
+            error,
+            success: false,
+            message: `Error In updating Status`
+        })
+    }
+}

@@ -1,6 +1,6 @@
 import express from 'express'
 import { requireSignIn,isAdmin } from '../middleware/authMiddleware.js';
-import { registerController,loginController,getOrderController } from '../controller/authController.js'; 
+import { registerController,loginController,getOrderController,getAllOrderController,OrderUpdateController } from '../controller/authController.js'; 
 import { ForgotPassword } from '../controller/authController.js';
 const router=express.Router();
 
@@ -21,6 +21,10 @@ router.get('/admin-auth',requireSignIn,isAdmin,(req,res)=>{
 
 router.post('/forgot-password',ForgotPassword)
 
- router.get('/order',requireSignIn,getOrderController)
+router.get('/order',requireSignIn,getOrderController)
+
+router.get('/admin-order',requireSignIn,isAdmin,getAllOrderController)
+
+router.put('/order-status/:orderId',requireSignIn,isAdmin,OrderUpdateController)
  
 export default router;

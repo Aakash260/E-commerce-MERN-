@@ -26,7 +26,7 @@ const AdminMenu = () => {
  
   <Link to='/dashboard/admin/users'>
       <div className="flex-1 bg-yellow-500 p-4">
-        Users
+        Users Order
       </div>
   </Link>
 </div>
