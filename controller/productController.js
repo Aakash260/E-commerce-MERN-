@@ -9,7 +9,7 @@ dotenv.config();
 var gateway = new braintree.BraintreeGateway({
     environment: braintree.Environment.Sandbox,
     merchantId: process.env.Merchant_ID,
-    publicKey: ttdfvzq64shr9gdv,
+    publicKey: "ttdfvzq64shr9gdv",
     privateKey: process.env.Private_Key,
 });
 
