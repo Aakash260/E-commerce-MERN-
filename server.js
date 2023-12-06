@@ -6,6 +6,7 @@ import authroute from './routers/authroute.js'
 import categoryRoute from './routers/categoryRoutes.js'
 import cors from 'cors'
 import productRoute from './routers/productRoute.js'
+import {fileURLToPath} from 'url'
 import path from 'path'
 //configfile
 dotenv.config();
