@@ -1,10 +1,6 @@
-import {MongoClient} from 'mongodb'
+
 import categoryModel from "../models/categoryModel.js"
 import slugify from "slugify"
-import dotenv from 'dotenv'
-dotenv.config();
-
-const client=new MongoClient(process.env.MONGODB);
 
 export const createCategoryController = async (req, res) => {
     try {
@@ -61,7 +57,7 @@ export const updateCategoryController = async (req, res) => {
 
 export const getAllcategoryController = async(req,res) => {
     try {
-        const all_category=await client.db('e-commerce').collection('categories').find({})
+        const all_category=await categoryModel.find({})
         res.status(200).send({
             success:true,
             message:'all category',
