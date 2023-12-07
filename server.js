@@ -27,8 +27,18 @@ app.use('/api/v1/category',categoryRoute)
 app.use('/api/v1/product',productRoute)
 app.use(express.static(path.join(__dirname,"./client/dist")))
 
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://quaint-lime-butterfly.cyclic.app/'); // Replace with your allowed URL
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+  });
+
+
 const PORT=process.env.PORT || 8080
  
+
 // app.get('/',(req,res)=>{
 //     res.send({Message:'welcome'})
 // })
