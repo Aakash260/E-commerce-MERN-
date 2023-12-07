@@ -11,6 +11,7 @@ import path from 'path'
 //configfile
 dotenv.config();
 //db connection
+ Db();
  
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename)
@@ -39,9 +40,8 @@ app.use('*',function(req,res){
 })
 
 
-Db().then(() => {
-    console.log("db connected");
+ 
     app.listen(PORT,()=>{ 
         console.log(`listening on ${PORT}`)
     })
-})
+ 
